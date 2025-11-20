@@ -50,10 +50,10 @@ This site uses `jekyll-klise` as a remote theme via the `jekyll-remote-theme` pl
 - Remote theme: `piharpi/jekyll-klise`
 - Permalink structure: `/:title/`
 - Pagination: 5 posts per page
-- Plugins: jekyll-feed, jekyll-seo-tag, jekyll-sitemap, jekyll-postfiles, jekyll-paginate, jekyll-remote-theme
+- Plugins: jekyll-feed, jekyll-seo-tag, jekyll-sitemap, jekyll-paginate, jekyll-remote-theme
 
 ### Important Notes
-- **GitHub Pages Limitation**: The `jekyll-postfiles` plugin is not supported by GitHub Pages. If hosting on GitHub Pages, you may experience issues with post images and assets. Consider deploying to Netlify, Vercel, Azure Static Web Apps, or Surge instead.
+- **GitHub Pages Compatibility**: This site is configured to work with GitHub Pages using the `github-pages` gem, which ensures all dependencies match GitHub's environment.
 - **Avatar Image**: Place your avatar at `assets/img/avatar.jpg` (referenced in `_config.yml`)
 - **Old Theme Files**: Previous Minima theme customizations are backed up in `_old_minima_theme/` directory
 
