@@ -18,92 +18,48 @@
 }
 
 .menu:last-child{
-  padding-right:20px;
+  padding-right:10px;
 }
 
-/* Leaderboard table styling */
+/* Leaderboard table styling - Professional & Minimalistic */
 table {
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
+  border-collapse: collapse;
   margin: 2rem 0;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-table thead {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-size: 0.95rem;
 }
 
 table thead th {
-  color: white;
-  padding: 1rem;
+  padding: 0.75rem 1rem;
   font-weight: 600;
   text-align: left;
-  text-transform: uppercase;
   font-size: 0.85rem;
   letter-spacing: 0.5px;
-}
-
-table tbody tr {
-  background: white;
-  transition: all 0.3s ease;
-}
-
-table tbody tr:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-bottom: 2px solid #000;
 }
 
 table tbody td {
-  padding: 1.2rem 1rem;
-  border-bottom: 1px solid #e2e8f0;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 table tbody tr:last-child td {
   border-bottom: none;
 }
 
-/* Rank column special styling */
-table tbody tr:nth-child(1) td:first-child {
-  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-  font-weight: bold;
-  color: #865c00;
-}
-
-table tbody tr:nth-child(2) td:first-child {
-  background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%);
-  font-weight: bold;
-  color: #4a4a4a;
-}
-
-table tbody tr:nth-child(3) td:first-child {
-  background: linear-gradient(135deg, #cd7f32 0%, #e6a75c 100%);
-  font-weight: bold;
-  color: #5c3d1f;
-}
-
-table tbody tr:nth-child(4) td:first-child {
-  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e0 100%);
-  font-weight: bold;
-  color: #2d3748;
+table tbody tr:hover {
+  background: #fafafa;
 }
 
 /* Dark mode support */
-[data-theme="dark"] table {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-[data-theme="dark"] table tbody tr {
-  background: #1a202c;
+[data-theme="dark"] table thead th {
+  border-bottom: 2px solid #fff;
 }
 
 [data-theme="dark"] table tbody td {
-  border-bottom: 1px solid #2d3748;
-  color: #e2e8f0;
+  border-bottom: 1px solid #404040;
 }
 
 [data-theme="dark"] table tbody tr:hover {
-  background: #2d3748;
+  background: #1a1a1a;
 }
