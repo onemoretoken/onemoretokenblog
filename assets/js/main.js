@@ -1,24 +1,14 @@
-// Dark mode toggle functionality
+// Dark mode is always on - no toggle functionality needed
 (function() {
   const body = document.body;
+
+  // Always set dark mode
+  localStorage.setItem("theme", "dark");
+  body.setAttribute("data-theme", "dark");
+
+  // Hide toggle button if it exists
   const modeToggle = document.getElementById("mode");
-
-  const toggleTheme = () => {
-    const currentTheme = localStorage.getItem("theme");
-
-    if (currentTheme === "dark") {
-      // Switch to light mode
-      localStorage.setItem("theme", "light");
-      body.removeAttribute("data-theme");
-    } else {
-      // Switch to dark mode
-      localStorage.setItem("theme", "dark");
-      body.setAttribute("data-theme", "dark");
-    }
-  };
-
-  // Add click listener to toggle button
   if (modeToggle) {
-    modeToggle.addEventListener("click", toggleTheme);
+    modeToggle.style.display = "none";
   }
 })();

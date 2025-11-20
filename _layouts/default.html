@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ '/assets/css/klise.css' | relative_url }}">
+  {% include custom-head.html %}
+  <script>
+    // Force dark mode - always set dark theme
+    (function() {
+      // Always set dark mode
+      localStorage.setItem("theme", "dark");
+      document.documentElement.setAttribute("data-theme", "dark");
+      document.body?.setAttribute("data-theme", "dark");
+    })();
+  </script>
+</head>
+<body data-theme="dark">
+  <script>
+    // Ensure dark mode is set on body immediately
+    document.body.setAttribute("data-theme", "dark");
+  </script>
+
+  {% include navbar.html %}
+
+  <main>
+    {{ content }}
+  </main>
+
+  <script>
+    // Override any theme switching functionality
+    (function() {
+      // Always keep dark mode active
+      document.body.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+
+      // Disable theme toggle if it exists
+      const modeToggle = document.getElementById("mode");
+      if (modeToggle) {
+        modeToggle.style.display = "none";
+        modeToggle.onclick = null;
+      }
+    })();
+  </script>
+
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>
