@@ -80,6 +80,12 @@
   color: #ffffff;
   opacity: 0.9;
   transition: opacity 0.2s ease;
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: none !important;
 }
 
 .mode-toggle:hover {
@@ -119,14 +125,23 @@
   display: none !important;
 }
 
-/* Ensure everything stays visible on mobile */
+/* Ensure nav links always visible on all screen sizes */
+.nav-right {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Keep navbar consistent on smaller screens */
 @media screen and (max-width: 768px) {
   .navbar .menu {
     padding: 0 4px;
+    flex-wrap: nowrap;
   }
 
   .nav-right {
     gap: 8px;
+    display: flex !important;
   }
 
   .site-title {
@@ -134,20 +149,29 @@
   }
 
   .menu-link {
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 
 @media screen and (max-width: 480px) {
+  .navbar .menu {
+    padding: 0 2px;
+  }
+
   .nav-right {
-    gap: 6px;
+    gap: 4px;
   }
 
   .menu-link {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .site-title {
-    font-size: 13px;
+    font-size: 12px;
+  }
+
+  .mode-toggle svg {
+    width: 16px;
+    height: 16px;
   }
 }
