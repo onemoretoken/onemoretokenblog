@@ -29,7 +29,6 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-postfiles
   - jekyll-paginate
   - jekyll-remote-theme
 
