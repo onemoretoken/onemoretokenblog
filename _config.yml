@@ -1,3 +1,32 @@
 title: Tokenfiend
-description: A blog about my LLM adventures
+description: >
+  Documenting experiments, observations, and learnings from the world
+  of Large Language Models. One token at a time.
 theme: minima
+
+# Author information
+author:
+  name: Tokenfiend
+
+# Social links (uncomment and add your handles)
+# minima:
+#   social_links:
+#     - { platform: github, user_url: "https://github.com/yourusername" }
+#     - { platform: twitter, user_url: "https://twitter.com/yourusername" }
+
+# Theme configuration
+minima:
+  skin: dark
+  date_format: "%b %-d, %Y"
+
+# Build settings
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+
+# Display settings
+show_excerpts: true
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
