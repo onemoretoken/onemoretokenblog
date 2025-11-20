@@ -4,4 +4,5 @@ title: About
 permalink: /about/
 ---
 
-Welcome to Tokenfiend, a blog where I play around with with large language models, share my opinions on them and then rank them.Here you'll find experiments with various LLMs (and non), personal insights, opinions and observations.
+Welcome to Tokenfiend; a blog where I experiment with LLM, share my opinions on them and rank them.
+Here you'll find experiments with various LLM- and non-LLM-s, personal insights, opinions and other observations.
