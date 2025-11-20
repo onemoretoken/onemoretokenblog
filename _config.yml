@@ -14,7 +14,7 @@ version: "1.0.1"
 # Author information
 author:
   name: tokenfiend
-  bio: "Benchmarking LLMs and rating them, and whatever else sparks my interest"
+  bio: "Benchmarking LLMs and rating them"
   username: tokenfiend
   avatar: /assets/img/avatar.jpg # this will be prefixed with baseurl automatically
   email: contact@tokenfiend.com
