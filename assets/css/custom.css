@@ -1,0 +1,42 @@
+/* Custom styles for navbar */
+.navbar .menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.navbar-center .site-title {
+  pointer-events: auto;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-center .site-title:hover {
+  opacity: 0.7;
+}
+
+/* Ensure hamburger menu and dark mode button stay on the sides */
+.menu-icon,
+#mode {
+  z-index: 10;
+}
+
+/* Responsive: hide center title on small screens to avoid overlap */
+@media screen and (max-width: 768px) {
+  .navbar-center {
+    display: none;
+  }
+}

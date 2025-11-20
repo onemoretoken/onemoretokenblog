@@ -14,7 +14,7 @@ version: "1.0.1"
 # Author information
 author:
   name: Tokenfiend
-  bio: "Writing about technology and tokens"
+  bio: "Writing about LLMs and my opinions on them"
   username: tokenfiend
   avatar: /assets/img/avatar.jpg # this will be prefixed with baseurl automatically
   email: your-email@email.com
