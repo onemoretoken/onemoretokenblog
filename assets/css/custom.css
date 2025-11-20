@@ -1,42 +1,132 @@
-/* Custom styles for navbar */
+/* Hacker News style navbar */
+.navbar {
+  background-color: #ff6600;
+  padding: 4px;
+  border-bottom: 1px solid #ff6600;
+}
+
+[data-theme="dark"] .navbar {
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #333;
+}
+
 .navbar .menu {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 8px;
+  height: 32px;
 }
 
-.navbar-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+.nav-left,
+.nav-center,
+.nav-right {
   display: flex;
   align-items: center;
-  pointer-events: none;
+  gap: 12px;
 }
 
-.navbar-center .site-title {
-  pointer-events: auto;
-  font-size: 1.2rem;
-  font-weight: 600;
+.nav-left {
+  flex-shrink: 0;
+}
+
+.nav-center {
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.nav-right {
+  flex-shrink: 0;
+}
+
+.site-title {
+  font-size: 16px;
+  font-weight: bold;
   text-decoration: none;
-  color: inherit;
-  transition: opacity 0.3s ease;
+  color: #000;
+  white-space: nowrap;
 }
 
-.navbar-center .site-title:hover {
+[data-theme="dark"] .site-title {
+  color: #ff6600;
+}
+
+.menu-link {
+  font-size: 14px;
+  text-decoration: none;
+  color: #000;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+[data-theme="dark"] .menu-link {
+  color: #ddd;
+}
+
+.menu-link:hover,
+.site-title:hover {
   opacity: 0.7;
 }
 
-/* Ensure hamburger menu and dark mode button stay on the sides */
-.menu-icon,
-#mode {
-  z-index: 10;
+.menu-link.active {
+  font-weight: bold;
 }
 
-/* Responsive: hide center title on small screens to avoid overlap */
+.mode-toggle,
+.rss-link {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.mode-toggle svg,
+.rss-link svg {
+  display: block;
+}
+
+/* Hide burger menu elements completely */
+.menu-trigger,
+.menu-icon,
+.trigger {
+  display: none !important;
+}
+
+/* Ensure everything stays visible on mobile */
 @media screen and (max-width: 768px) {
-  .navbar-center {
-    display: none;
+  .navbar .menu {
+    padding: 0 4px;
+    gap: 8px;
+  }
+
+  .nav-left,
+  .nav-center,
+  .nav-right {
+    gap: 8px;
+  }
+
+  .site-title {
+    font-size: 14px;
+  }
+
+  .menu-link {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nav-center {
+    gap: 6px;
+  }
+
+  .menu-link {
+    font-size: 12px;
+  }
+
+  .site-title {
+    font-size: 13px;
   }
 }
