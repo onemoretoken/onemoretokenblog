@@ -226,21 +226,21 @@
     padding: 0 1em;
   }
 
-  /* Menu container with centered content */
+  /* Menu container - spread layout */
   .menu-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 2em;
+    justify-content: space-between;
     position: relative;
     min-height: 3em; /* Ensure consistent height */
+    width: 100%;
   }
 
-  /* Dark mode toggle */
+  /* Dark mode toggle - left side */
   .dark-mode-toggle {
     display: flex;
     align-items: center;
-    justify-content: center;
+    flex: 0 0 auto;
   }
 
   .dark-mode-toggle .mode-button {
@@ -252,6 +252,7 @@
     background: none;
     border: none;
     line-height: 0;
+    text-decoration: none;
   }
 
   .dark-mode-toggle svg {
@@ -260,13 +261,16 @@
     height: 24px;
   }
 
-  /* Logo - in the center */
+  /* Logo - center */
   .menu-logo {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+    text-align: center;
   }
 
-  /* Menu trigger (burger menu) */
+  /* Menu trigger (burger menu) - right side */
   .menu-trigger {
     display: none; /* Hidden checkbox */
   }
@@ -278,6 +282,7 @@
     cursor: pointer;
     padding: 0.5em;
     line-height: 0;
+    flex: 0 0 auto;
   }
 
   .menu-icon svg {
@@ -336,7 +341,7 @@
     }
 
     .trigger {
-      display: block !important;
+      display: flex !important;
       position: static;
       transform: none;
       background: none;
@@ -344,6 +349,7 @@
       padding: 0;
       margin: 0;
       box-shadow: none;
+      flex: 0 0 auto;
     }
 
     .trigger-container {
