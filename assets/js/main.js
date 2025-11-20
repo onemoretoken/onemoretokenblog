@@ -1,42 +1,24 @@
-(() => {
+// Dark mode toggle functionality
+(function() {
   const body = document.body;
-  const lamp = document.getElementById("mode");
+  const modeToggle = document.getElementById("mode");
 
-  const initTheme = (state) => {
-    if (state === null) {
-      // Check system preference
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        localStorage.setItem("theme", "dark");
-        body.setAttribute("data-theme", "dark");
-      } else {
-        localStorage.setItem("theme", "light");
-        body.removeAttribute("data-theme");
-      }
-    } else if (state === "dark") {
-      body.setAttribute("data-theme", "dark");
-    } else {
-      body.removeAttribute("data-theme");
-    }
-  };
+  const toggleTheme = () => {
+    const currentTheme = localStorage.getItem("theme");
 
-  const toggleTheme = (state) => {
-    if (state === "dark") {
+    if (currentTheme === "dark") {
+      // Switch to light mode
       localStorage.setItem("theme", "light");
       body.removeAttribute("data-theme");
-    } else if (state === "light") {
+    } else {
+      // Switch to dark mode
       localStorage.setItem("theme", "dark");
       body.setAttribute("data-theme", "dark");
-    } else {
-      initTheme(state);
     }
   };
 
-  // Initialize theme on page load
-  initTheme(localStorage.getItem("theme"));
-
-  if (lamp) {
-    lamp.addEventListener("click", () =>
-      toggleTheme(localStorage.getItem("theme"))
-    );
+  // Add click listener to toggle button
+  if (modeToggle) {
+    modeToggle.addEventListener("click", toggleTheme);
   }
 })();
