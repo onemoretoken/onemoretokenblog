@@ -4,8 +4,6 @@ title: Leaderboard
 permalink: /leaderboard/
 ---
 
-# Leaderboard
-
 | Rank | Model | Score | Rating |
 |------|-------|-------|--------|
 | 1    | GPT-4 | 95    | ⭐⭐⭐⭐⭐ |
