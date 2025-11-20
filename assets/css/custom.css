@@ -9,6 +9,11 @@
   float:none;
 }
 
+.menu a#mode {
+  left:0px;
+  top:0px;
+}
+
 .header{
   margin-top: 3em;
 }
