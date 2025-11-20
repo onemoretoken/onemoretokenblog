@@ -28,6 +28,8 @@
 #mode{
   height: 100%;
   width: 46px;
+  display: flex;
+  justify-content: center;
 }
 
 .siteTitle{
