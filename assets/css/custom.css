@@ -72,10 +72,33 @@
   cursor: pointer;
   line-height: 1;
   text-decoration: none;
+  color: #000;
+}
+
+[data-theme="dark"] .mode-toggle {
+  color: #ddd;
 }
 
 .mode-toggle svg {
   display: block;
+}
+
+/* Show moon in light mode (to switch to dark) */
+.mode-sunny {
+  display: none;
+}
+
+.mode-moon {
+  display: block;
+}
+
+/* Show sun in dark mode (to switch to light) */
+[data-theme="dark"] .mode-sunny {
+  display: block;
+}
+
+[data-theme="dark"] .mode-moon {
+  display: none;
 }
 
 /* Hide burger menu elements completely */
