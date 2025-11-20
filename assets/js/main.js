@@ -2,6 +2,17 @@
   const body = document.body;
   const lamp = document.getElementById("mode");
 
+  const initTheme = (state) => {
+    if (state === "dark") {
+      body.setAttribute("data-theme", "dark");
+    } else if (state === "light") {
+      body.removeAttribute("data-theme");
+    } else {
+      localStorage.setItem("theme", "light");
+      body.removeAttribute("data-theme");
+    }
+  };
+
   const toggleTheme = (state) => {
     if (state === "dark") {
       localStorage.setItem("theme", "light");
@@ -15,16 +26,6 @@
   };
 
   window.addEventListener("load", () => {
-    const initTheme = (state) => {
-      if (state === "dark") {
-        body.setAttribute("data-theme", "dark");
-      } else if (state === "light") {
-        body.removeAttribute("data-theme");
-      } else {
-        localStorage.setItem("theme", "light");
-        body.removeAttribute("data-theme");
-      }
-    };
     initTheme(localStorage.getItem("theme"));
 
     lamp.addEventListener("click", () =>
