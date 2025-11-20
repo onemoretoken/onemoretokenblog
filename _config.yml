@@ -1,12 +1,9 @@
 title: Tokenfiend
-description: >
-  Documenting experiments, observations, and learnings from the world
-  of Large Language Models. One token at a time.
+description: ""
 theme: minima
 
 # Author information
-author:
-  name: Tokenfiend
+author: Tokenfiend
 
 # Social links (uncomment and add your handles)
 # minima:
@@ -18,6 +15,7 @@ author:
 minima:
   skin: dark
   date_format: "%b %-d, %Y"
+  header_pages: []  # Hide all pages from header navigation
 
 # Build settings
 markdown: kramdown
