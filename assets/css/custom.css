@@ -1,26 +1,3 @@
-/* Force dark mode styles */
-body {
-  background-color: #1a1a1a !important;
-  color: #e0e0e0 !important;
-}
-
-/* Hide theme toggle button since we're forcing dark mode */
-#mode {
-  display: none !important;
-}
-
-/* Ensure dark theme is always active */
-[data-theme="dark"] {
-  --bg-color: #1a1a1a;
-  --text-color: #e0e0e0;
-}
-
-/* Additional dark mode overrides if needed */
-body[data-theme="dark"] {
-  background-color: #1a1a1a !important;
-  color: #e0e0e0 !important;
-}
-
 /* Trigger container flexbox layout */
 .trigger-container {
   display: flex !important;
