@@ -1,4 +1,5 @@
 (() => {
+  // Theme handling
   const body = document.body;
   const lamp = document.getElementById("mode");
 
@@ -13,25 +14,33 @@
     }
   };
 
-  const toggleTheme = (state) => {
-    if (state === "dark") {
+  const toggleTheme = () => {
+    const currentTheme = body.getAttribute("data-theme");
+    if (currentTheme === "dark") {
       localStorage.setItem("theme", "light");
       body.removeAttribute("data-theme");
-    } else if (state === "light") {
+    } else {
       localStorage.setItem("theme", "dark");
       body.setAttribute("data-theme", "dark");
-    } else {
-      initTheme(state);
     }
   };
 
-  window.addEventListener("load", () => {
-    initTheme(localStorage.getItem("theme"));
+  // Set up event listeners when DOM is ready
+  if (lamp) {
+    lamp.addEventListener("click", (e) => {
+      e.preventDefault();
+      toggleTheme();
+    });
+  }
 
-    if (lamp) {
-      lamp.addEventListener("click", () =>
-        toggleTheme(localStorage.getItem("theme"))
-      );
-    }
-  });
+  // Initialize theme if not already done
+  if (typeof window !== 'undefined' && window.addEventListener) {
+    window.addEventListener("DOMContentLoaded", () => {
+      // Re-init theme in case it wasn't set properly
+      const storedTheme = localStorage.getItem("theme");
+      if (storedTheme) {
+        initTheme(storedTheme);
+      }
+    });
+  }
 })();
