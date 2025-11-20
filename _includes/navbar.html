@@ -233,21 +233,31 @@
     justify-content: center;
     gap: 2em;
     position: relative;
+    min-height: 3em; /* Ensure consistent height */
   }
 
   /* Dark mode toggle */
   .dark-mode-toggle {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   .dark-mode-toggle .mode-button {
     display: flex;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
     padding: 0.5em;
     background: none;
     border: none;
+    line-height: 0;
+  }
+
+  .dark-mode-toggle svg {
+    display: block;
+    width: 24px;
+    height: 24px;
   }
 
   /* Logo - in the center */
@@ -264,11 +274,16 @@
   .menu-icon {
     display: flex;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
     padding: 0.5em;
+    line-height: 0;
   }
 
   .menu-icon svg {
+    display: block;
+    width: 24px;
+    height: 24px;
     fill: currentColor;
   }
 
