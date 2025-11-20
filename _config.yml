@@ -5,8 +5,8 @@ timezone: America/New_York
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://tokenfiend.com" # your site URL
 
-# Remote theme
-remote_theme: piharpi/jekyll-klise
+# Remote theme (pinned to specific commit for security)
+remote_theme: piharpi/jekyll-klise@9c0c68d52a70d1a552db90d72384f9601e435a31
 
 # Site version (auto-updated by git hook)
 version: "1.0.1"
@@ -17,7 +17,7 @@ author:
   bio: "Benchmarking LLMs and rating them"
   username: tokenfiend
   avatar: /assets/img/avatar.jpg # this will be prefixed with baseurl automatically
-  email: admit.49-decider@icloud.com
+  email: contact@tokenfiend.com
   github: tokenfiend
 
 # Build settings
