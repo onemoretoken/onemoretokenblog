@@ -1,0 +1,10 @@
+# Menu items for the navigation bar
+
+- title: Home
+  url: /
+
+- title: About
+  url: /about/
+
+- title: Archive
+  url: /archive/
