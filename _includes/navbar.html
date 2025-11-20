@@ -1,10 +1,161 @@
 <div class="navbar" role="navigation">
   <nav class="menu">
+    <!-- Dark mode toggle on the far left -->
+    <div class="dark-mode-toggle">
+      <a id="mode" class="mode-button" role="button" aria-label="Toggle dark mode">
+        <svg
+          class="mode-sunny"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>LIGHT</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+        <svg
+          class="mode-moon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+        >
+          <title>DARK</title>
+          <line
+            x1="256"
+            y1="48"
+            x2="256"
+            y2="96"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="256"
+            y1="416"
+            x2="256"
+            y2="464"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="108.92"
+            x2="369.14"
+            y2="142.86"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="369.14"
+            x2="108.92"
+            y2="403.08"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="464"
+            y1="256"
+            x2="416"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="96"
+            y1="256"
+            x2="48"
+            y2="256"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="403.08"
+            y1="403.08"
+            x2="369.14"
+            y2="369.14"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <line
+            x1="142.86"
+            y1="142.86"
+            x2="108.92"
+            y2="108.92"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+          <circle
+            cx="256"
+            cy="256"
+            r="80"
+            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+          />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Centered logo -->
     <div class="menu-logo">
       <a href="{{ site.baseurl }}/" style="text-decoration: none; color: inherit;">
         <span style="font-weight: bold; font-size: 1.2em; letter-spacing: -0.5px;">Tokenfiend</span>
       </a>
     </div>
+
+    <!-- Menu items on the right -->
     <input type="checkbox" id="menu-trigger" class="menu-trigger" />
     <label for="menu-trigger">
       <span class="menu-icon">
@@ -53,167 +204,73 @@
             />
           </svg>
         </a>
-        <a id="mode">
-          <svg
-            class="mode-sunny"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 512 512"
-          >
-            <title>LIGHT</title>
-            <line
-              x1="256"
-              y1="48"
-              x2="256"
-              y2="96"
-              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-            />
-            <line
-              x1="256"
-              y1="416"
-              x2="256"
-              y2="464"
-              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-            />
-            <line
-              x1="403.08"
-              y1="108.92"
-              x2="369.14"
-              y2="142.86"
-              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-            />
-            <line
-              x1="142.86"
-              y1="369.14"
-              x2="108.92"
-              y2="403.08"
-              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-            />
-            <line
-              x1="464"
-              y1="256"
-              x2="416"
-              y2="256"
-              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-            />
-            <line
-              x1="96"
-              y1="256"
-              x2="48"
-              y2="256"
-              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-            />
-            <line
-              x1="403.08"
-              y1="403.08"
-              x2="369.14"
-              y2="369.14"
-              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-            />
-            <line
-              x1="142.86"
-              y1="142.86"
-              x2="108.92"
-              y2="108.92"
-              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-            />
-            <circle
-              cx="256"
-              cy="256"
-              r="80"
-              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-            />
-          </svg>
-          <svg
-            class="mode-moon"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 512 512"
-          >
-            <title>DARK</title>
-            <line
-              x1="256"
-              y1="48"
-              x2="256"
-              y2="96"
-              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-            />
-            <line
-              x1="256"
-              y1="416"
-              x2="256"
-              y2="464"
-              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-            />
-            <line
-              x1="403.08"
-              y1="108.92"
-              x2="369.14"
-              y2="142.86"
-              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-            />
-            <line
-              x1="142.86"
-              y1="369.14"
-              x2="108.92"
-              y2="403.08"
-              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-            />
-            <line
-              x1="464"
-              y1="256"
-              x2="416"
-              y2="256"
-              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-            />
-            <line
-              x1="96"
-              y1="256"
-              x2="48"
-              y2="256"
-              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-            />
-            <line
-              x1="403.08"
-              y1="403.08"
-              x2="369.14"
-              y2="369.14"
-              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-            />
-            <line
-              x1="142.86"
-              y1="142.86"
-              x2="108.92"
-              y2="108.92"
-              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-            />
-            <circle
-              cx="256"
-              cy="256"
-              r="80"
-              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-            />
-          </svg>
-        </a>
       </div>
     </div>
   </nav>
 </div>
 
 <style>
-  .menu-logo {
-    display: inline-block;
-    float: left;
-    margin-right: 40px;
-    padding: 0.5em 1.5em 0.5em 2em;
+  /* Navbar layout: dark mode toggle on left, title centered, menu on right */
+  .navbar .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 0.5em 1em;
   }
 
+  /* Dark mode toggle - far left */
+  .dark-mode-toggle {
+    position: absolute;
+    left: 1em;
+    z-index: 10;
+  }
+
+  .dark-mode-toggle .mode-button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.5em;
+  }
+
+  /* Logo - centered */
+  .menu-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 5;
+  }
+
+  /* Menu trigger and items - right side */
+  .menu-trigger,
+  .menu-icon {
+    margin-left: auto;
+  }
+
+  .trigger {
+    margin-left: auto;
+  }
+
+  /* Mobile responsive */
   @media (max-width: 768px) {
+    .navbar .menu {
+      padding: 0.5em 0.5em;
+    }
+
+    .dark-mode-toggle {
+      left: 0.5em;
+    }
+
     .menu-logo {
-      margin-right: 25px;
-      padding: 0.5em 1em 0.5em 1.5em;
+      font-size: 0.9em;
+    }
+  }
+
+  /* Ensure the layout doesn't break on very small screens */
+  @media (max-width: 480px) {
+    .menu-logo span {
+      font-size: 1em !important;
     }
   }
 </style>
