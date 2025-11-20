@@ -30,6 +30,10 @@
   width: 46px;
   display: flex;
   justify-content: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .siteTitle{

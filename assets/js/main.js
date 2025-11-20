@@ -35,8 +35,9 @@
   initTheme(localStorage.getItem("theme"));
 
   if (lamp) {
-    lamp.addEventListener("click", () =>
-      toggleTheme(localStorage.getItem("theme"))
-    );
+    lamp.addEventListener("click", (e) => {
+      e.preventDefault();
+      toggleTheme(localStorage.getItem("theme"));
+    });
   }
 })();
