@@ -6,7 +6,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://tokenfiend.com" # your site URL
 
 # Remote theme
-remote_theme: piharpi/jekyll-klise
+remote_theme: piharpi/jekyll-klise@8f0e7c9
 
 # Site version (auto-updated by git hook)
 version: "1.0.1"
