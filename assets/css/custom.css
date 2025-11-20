@@ -20,3 +20,10 @@ body[data-theme="dark"] {
   background-color: #1a1a1a !important;
   color: #e0e0e0 !important;
 }
+
+/* Trigger container flexbox layout */
+.trigger-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
