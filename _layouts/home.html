@@ -1,0 +1,192 @@
+---
+layout: default
+home: true
+---
+
+<style>
+  .charts-section {
+    margin: 2em 0 3em 0;
+    padding: 2em 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .chart-container {
+    max-width: 800px;
+    margin: 2em auto;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5em;
+    margin: 2em 0;
+  }
+  .stat-card {
+    text-align: center;
+    padding: 1.5em;
+    background: var(--bg-color);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+  }
+  .stat-number {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--heading-color);
+  }
+  .stat-label {
+    color: var(--text-color);
+    margin-top: 0.5em;
+  }
+  [data-theme="dark"] .stat-card {
+    border-color: #444;
+  }
+  [data-theme="dark"] .charts-section {
+    border-bottom-color: #444;
+  }
+</style>
+
+<div class="charts-section">
+  <h2 style="text-align: center; margin-bottom: 1.5em;">Platform Analytics</h2>
+
+  <!-- Stats Cards -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-number">35K</div>
+      <div class="stat-label">Active Users</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">1.4M</div>
+      <div class="stat-label">API Requests</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">99.95%</div>
+      <div class="stat-label">Uptime</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">98ms</div>
+      <div class="stat-label">Avg Response</div>
+    </div>
+  </div>
+
+  <!-- Bar Chart -->
+  <div class="chart-container">
+    <canvas id="tokenChart"></canvas>
+  </div>
+
+  <!-- Line Chart -->
+  <div class="chart-container">
+    <canvas id="growthChart"></canvas>
+  </div>
+</div>
+
+<!-- Blog Posts Section -->
+<h3 class="posts-item-note" aria-label="Recent Posts">Recent Posts</h3>
+{%- for post in paginator.posts -%}
+<article class="post-item">
+  <span class="post-item-date">{{ post.date | date: "%b %d, %Y" }}</span>
+  <h4 class="post-item-title">
+    <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+  </h4>
+</article>
+{%- endfor -%}
+
+{% include pagination.html %}
+
+<!-- Chart.js Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  // Token Usage Bar Chart
+  const ctx = document.getElementById('tokenChart').getContext('2d');
+  const tokenChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['GPT-4', 'Claude 3', 'Gemini', 'LLaMA 2', 'Mixtral', 'Falcon'],
+      datasets: [{
+        label: 'Token Usage (Millions)',
+        data: [450, 380, 290, 210, 165, 140],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.8)',
+          'rgba(54, 162, 235, 0.8)',
+          'rgba(255, 206, 86, 0.8)',
+          'rgba(75, 192, 192, 0.8)',
+          'rgba(153, 102, 255, 0.8)',
+          'rgba(255, 159, 64, 0.8)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 2
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: 'Monthly Token Usage by Model',
+          font: {
+            size: 18
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Tokens (Millions)'
+          }
+        }
+      }
+    }
+  });
+
+  // Growth Line Chart
+  const ctx2 = document.getElementById('growthChart').getContext('2d');
+  const growthChart = new Chart(ctx2, {
+    type: 'line',
+    data: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      datasets: [{
+        label: 'Active Users',
+        data: [1200, 1900, 3000, 5000, 6900, 9200, 12000, 15500, 19000, 23000, 28000, 35000],
+        borderColor: 'rgb(75, 192, 192)',
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        tension: 0.4
+      },
+      {
+        label: 'API Requests (thousands)',
+        data: [50, 75, 110, 165, 240, 340, 450, 580, 720, 890, 1100, 1400],
+        borderColor: 'rgb(255, 99, 132)',
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        tension: 0.4
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: 'Platform Growth Metrics 2024',
+          font: {
+            size: 18
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
