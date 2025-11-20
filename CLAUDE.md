@@ -8,7 +8,6 @@ This is a Jekyll-based blog called "Tokenfiend" using the [jekyll-klise](https:/
 
 ## Development Commands
 
-### Initial Setup
 ```bash
 # Install dependencies
 bundle install
@@ -23,10 +22,33 @@ bundle exec jekyll build
 bundle exec jekyll clean
 ```
 
-### Content Management
-Blog posts are located in `_posts/` and must follow the naming convention: `YYYY-MM-DD-title.md`
+## Architecture
 
-Posts require YAML front matter:
+### Remote Theme Override Pattern
+This site uses `jekyll-klise` as a remote theme. The theme files are fetched from GitHub at build time. Local files override remote theme files when placed in the same relative path:
+
+**Key override hierarchy:**
+1. `_layouts/default.html` - Main layout that wraps all content, includes custom navbar and theme initialization
+2. `_includes/navbar.html` - Custom navigation bar component
+3. `_includes/custom-head.html` - Loads `assets/css/custom.css` for all styling customizations
+4. `assets/css/custom.css` - All custom CSS (navbar styling, wrapper width, dark mode)
+
+**Menu system:**
+- Navigation links are defined in `_data/menus.yml`
+- Navbar reads from this file and auto-highlights active page
+- Fallback to hardcoded home/about links if menus.yml is missing
+
+### Theme System Architecture
+The theme switcher works through a coordinated system:
+
+1. **Inline script in `_layouts/default.html`** - Runs immediately on page load to prevent flash, reads from localStorage or system preference, sets `data-theme="dark"` attribute on `<body>`
+2. **CSS theme selectors** - Use `[data-theme="dark"]` attribute selectors in `assets/css/custom.css`
+3. **Toggle button** - In `_includes/navbar.html`, shows sun icon in dark mode, moon icon in light mode
+
+### Content Management
+Blog posts must follow the naming convention: `YYYY-MM-DD-title.md` in `_posts/`
+
+Required YAML front matter:
 ```yaml
 ---
 layout: post
@@ -35,32 +57,15 @@ date: YYYY-MM-DD HH:MM:SS +TIMEZONE
 ---
 ```
 
-## Architecture
-
-### Remote Theme
-This site uses `jekyll-klise` as a remote theme via the `jekyll-remote-theme` plugin. The theme files are pulled from the GitHub repository at build time, so local customization should be done through:
-- Custom files in `_includes/` to override theme includes
-- Custom files in `_layouts/` to override theme layouts
-- Custom SASS files in `_sass/` to extend theme styles
-
 ### Configuration
-`_config.yml` controls:
-- Site metadata (title, description, language, timezone)
-- Author information (name, bio, username, avatar, social links)
+`_config.yml` controls site metadata, author info, and build settings. Key settings:
 - Remote theme: `piharpi/jekyll-klise`
 - Permalink structure: `/:title/`
 - Pagination: 5 posts per page
-- Plugins: jekyll-feed, jekyll-seo-tag, jekyll-sitemap, jekyll-paginate, jekyll-remote-theme
+- Configured for GitHub Pages via `github-pages` gem
 
-### Important Notes
-- **GitHub Pages Compatibility**: This site is configured to work with GitHub Pages using the `github-pages` gem, which ensures all dependencies match GitHub's environment.
-- **Avatar Image**: Place your avatar at `assets/img/avatar.jpg` (referenced in `_config.yml`)
-- **Old Theme Files**: Previous Minima theme customizations are backed up in `_old_minima_theme/` directory
-
-## File Structure
-- `_config.yml` - Jekyll configuration
-- `_posts/` - Blog post markdown files
-- `Gemfile` - Ruby dependencies
-- `assets/img/` - Images (avatar, etc.)
-- `_includes/`, `_layouts/`, `_sass/` - Theme customization directories
-- `_old_minima_theme/` - Backup of previous Minima theme overrides
+### Styling Architecture
+- **No SASS files** - All customization is in `assets/css/custom.css` (plain CSS)
+- **Navbar max-width: 1200px** - Centered with auto margins
+- **Content wrapper** - Matches navbar width (1200px max-width) for visual alignment
+- **Responsive breakpoints** - 768px and 480px with adjusted font sizes and spacing
