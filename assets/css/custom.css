@@ -4,3 +4,8 @@
   align-items: center !important;
   gap: 6px;
 }
+
+/* Ensure consistent padding for all menu links */
+.menu-link {
+  padding: 5px 8px !important;
+}
