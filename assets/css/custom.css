@@ -5,6 +5,17 @@
   gap: 6px;
 }
 
+.trigger{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.siteTitle{
+  height: 100%;
+  width: 50px;
+}
+
 /* Ensure consistent padding for all menu links */
 .menu-link {
   padding-top: 5px !important;
