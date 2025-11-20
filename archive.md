@@ -4,8 +4,6 @@ title: Archive
 permalink: /archive/
 ---
 
-# Post Archive
-
 {% for post in site.posts %}
   {% assign currentYear = post.date | date: "%Y" %}
   {% assign currentMonth = post.date | date: "%B" %}
