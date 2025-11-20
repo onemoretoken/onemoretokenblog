@@ -1,0 +1,90 @@
+/* Remove burger menu and make navigation always visible */
+
+/* Hide the checkbox and label (burger menu) */
+.menu-trigger,
+.menu-icon {
+  display: none !important;
+}
+
+/* Make the navigation always visible */
+.trigger {
+  display: block !important;
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  background: transparent !important;
+}
+
+/* Ensure trigger-container is always visible */
+.trigger-container {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  flex-wrap: wrap !important;
+}
+
+/* Navbar layout adjustments */
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.menu {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: 1rem !important;
+}
+
+/* Menu links styling */
+.menu-link {
+  display: inline-block !important;
+  opacity: 1 !important;
+  font-size: 1rem !important;
+  padding: 0.5rem 0.75rem !important;
+  white-space: nowrap !important;
+}
+
+/* Theme toggle button - always visible */
+#mode {
+  display: flex !important;
+  align-items: center !important;
+  order: -1; /* Place theme toggle at the start */
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .trigger-container {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .menu-link {
+    width: 100%;
+    padding: 0.75rem 1rem !important;
+  }
+
+  #mode {
+    align-self: flex-start;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    padding: 0 0.5rem;
+  }
+
+  .menu-link {
+    font-size: 0.95rem !important;
+  }
+}
