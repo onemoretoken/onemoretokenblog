@@ -1,0 +1,23 @@
+{%- if page.author -%}
+  <section class="author">
+    <div class="author-avatar">
+      <!-- FIX: Added baseurl to avatar path -->
+      <img class="author-avatar" src="{{ site.baseurl }}{{ site.author.avatar }}" alt="{{ site.author.username }}" />
+    </div>
+    <div class="author-body">
+      <p class="author-username">{{ site.author.username }}</p>
+      <p>{{ site.author.bio }}</p>
+    </div>
+  </section>
+{%- else -%}
+  <section class="author">
+    <div class="author-avatar">
+      <!-- FIX: Added baseurl to avatar path -->
+      <img class="author-avatar" src="{{ site.baseurl }}{{ site.author.avatar }}" alt="{{ site.author.username }}" />
+    </div>
+    <div class="author-body">
+      <p class="author-username">{{ site.author.username }}</p>
+      <p>{{ site.author.bio }}</p>
+    </div>
+  </section>
+{%- endif -%}
