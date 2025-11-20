@@ -5,6 +5,10 @@
   gap: 6px;
 }
 
+.menu .trigger {
+  float:none;
+}
+
 .header{
   margin-top: 3em;
 }
