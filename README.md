@@ -1,2 +1,2 @@
-# onemoretokenblog
-A blog
+# Tokenfiend
+A blog about tokens and technology

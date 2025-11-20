@@ -1,9 +1,9 @@
-title: Tokenfiend
-description: "A blog about tokens and technology"
+title: tokenfiend
+description: "A blog where I try out llms"
 lang: en-US
 timezone: America/New_York
-baseurl: "/onemoretokenblog" # the subpath of your site, e.g. /blog
-url: "" # leave empty for GitHub Pages
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://tokenfiend.com" # your site URL
 
 # Remote theme
 remote_theme: piharpi/jekyll-klise
@@ -15,10 +15,10 @@ version: "1.0.1"
 author:
   name: Tokenfiend
   bio: "Writing about technology and tokens"
-  username: onemoretoken
+  username: tokenfiend
   avatar: /assets/img/avatar.jpg # this will be prefixed with baseurl automatically
   email: your-email@email.com
-  github: onemoretoken
+  github: tokenfiend
 
 # Build settings
 markdown: kramdown
