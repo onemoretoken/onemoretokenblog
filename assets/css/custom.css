@@ -23,8 +23,7 @@ body[data-theme="dark"] {
 
 /* Trigger container flexbox layout */
 .trigger-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex !important;
+  align-items: center !important;
   gap: 6px;
 }
