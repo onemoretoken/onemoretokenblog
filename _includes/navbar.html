@@ -1,7 +1,49 @@
 <div class="navbar" role="navigation">
   <nav class="menu">
     <div class="menu-container">
-      <!-- Dark mode toggle -->
+      <!-- Logo - top left -->
+      <div class="menu-logo">
+        <a href="{{ site.baseurl }}/" style="text-decoration: none; color: inherit;">
+          <span style="font-weight: bold; font-size: 1.2em; letter-spacing: -0.5px;">Tokenfiend</span>
+        </a>
+      </div>
+
+      <!-- Navigation links - center -->
+      <div class="nav-links">
+        {% assign url = page.url %}
+        {% for menu in site.data.menus %}
+          {% if url == menu.url %}
+            <a class="menu-link active" href="{{ menu.url }}">{{ menu.title }}</a>
+          {% else %}
+            {% if menu.external %}
+              <a class="menu-link" href="{{ menu.url }}" target="_blank" rel="noopener">{{ menu.title }}</a>
+            {% else %}
+              <a class="menu-link" href="{{ site.baseurl }}{{ menu.url }}">{{ menu.title }}</a>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        <a class="menu-link rss" href="{{ site.baseurl }}/feed.xml">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="17"
+            height="17"
+            viewBox="0 0 512 512"
+            fill="#ED812E"
+          >
+            <path
+              d="M108.56,342.78a60.34,60.34,0,1,0,60.56,60.44A60.63,60.63,0,0,0,108.56,342.78Z"
+            />
+            <path
+              d="M48,186.67v86.55c52,0,101.94,15.39,138.67,52.11s52,86.56,52,138.67h86.66C325.33,312.44,199.67,186.67,48,186.67Z"
+            />
+            <path
+              d="M48,48v86.56c185.25,0,329.22,144.08,329.22,329.44H464C464,234.66,277.67,48,48,48Z"
+            />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Dark mode toggle - top right -->
       <div class="dark-mode-toggle">
         <a id="mode" class="mode-button" role="button" aria-label="Toggle dark mode">
           <svg
@@ -148,71 +190,12 @@
           </svg>
         </a>
       </div>
-
-      <!-- Logo -->
-      <div class="menu-logo">
-        <a href="{{ site.baseurl }}/" style="text-decoration: none; color: inherit;">
-          <span style="font-weight: bold; font-size: 1.2em; letter-spacing: -0.5px;">Tokenfiend</span>
-        </a>
-      </div>
-
-      <!-- Menu items -->
-      <input type="checkbox" id="menu-trigger" class="menu-trigger" />
-      <label for="menu-trigger">
-        <span class="menu-icon">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 512 512"
-          >
-            <path
-              d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"
-            />
-          </svg>
-        </span>
-      </label>
-      <div class="trigger">
-        <div class="trigger-container">
-          {% assign url = page.url %}
-          {% for menu in site.data.menus %}
-            {% if url == menu.url %}
-              <a class="menu-link active" href="{{ menu.url }}">{{ menu.title }}</a>
-            {% else %}
-              {% if menu.external %}
-                <a class="menu-link" href="{{ menu.url }}" target="_blank" rel="noopener">{{ menu.title }}</a>
-              {% else %}
-                <a class="menu-link" href="{{ site.baseurl }}{{ menu.url }}">{{ menu.title }}</a>
-              {% endif %}
-            {% endif %}
-          {% endfor %}
-          <a class="menu-link rss" href="{{ site.baseurl }}/feed.xml">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="17"
-              height="17"
-              viewBox="0 0 512 512"
-              fill="#ED812E"
-            >
-              <path
-                d="M108.56,342.78a60.34,60.34,0,1,0,60.56,60.44A60.63,60.63,0,0,0,108.56,342.78Z"
-              />
-              <path
-                d="M48,186.67v86.55c52,0,101.94,15.39,138.67,52.11s52,86.56,52,138.67h86.66C325.33,312.44,199.67,186.67,48,186.67Z"
-              />
-              <path
-                d="M48,48v86.56c185.25,0,329.22,144.08,329.22,329.44H464C464,234.66,277.67,48,48,48Z"
-              />
-            </svg>
-          </a>
-        </div>
-      </div>
     </div>
   </nav>
 </div>
 
 <style>
-  /* Center the navigation menu */
+  /* Navigation bar container */
   .navbar {
     display: flex;
     justify-content: center;
@@ -226,17 +209,53 @@
     padding: 0 1em;
   }
 
-  /* Menu container - spread layout */
+  /* Menu container - spread layout with logo left, links center, dark mode right */
   .menu-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
-    min-height: 3em; /* Ensure consistent height */
+    min-height: 3em;
     width: 100%;
   }
 
-  /* Dark mode toggle - left side */
+  /* Logo - left side */
+  .menu-logo {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+
+  /* Navigation links - center */
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  .menu-link {
+    padding: 0.5em;
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    transition: opacity 0.2s;
+  }
+
+  .menu-link:hover {
+    opacity: 0.7;
+  }
+
+  .menu-link.active {
+    font-weight: bold;
+  }
+
+  .menu-link.rss {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Dark mode toggle - right side */
   .dark-mode-toggle {
     display: flex;
     align-items: center;
@@ -261,112 +280,19 @@
     height: 24px;
   }
 
-  /* Logo - center */
-  .menu-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1 1 auto;
-    text-align: center;
-  }
-
-  /* Menu trigger (burger menu) - right side */
-  .menu-trigger {
-    display: none; /* Hidden checkbox */
-  }
-
-  .menu-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    padding: 0.5em;
-    line-height: 0;
-    flex: 0 0 auto;
-  }
-
-  .menu-icon svg {
-    display: block;
-    width: 24px;
-    height: 24px;
-    fill: currentColor;
-  }
-
-  /* Trigger container for dropdown menu */
-  .trigger {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--bg-color, #fff);
-    border: 1px solid var(--border-color, #e0e0e0);
-    border-radius: 4px;
-    padding: 1em;
-    margin-top: 0.5em;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    z-index: 100;
-  }
-
-  .menu-trigger:checked ~ .trigger {
-    display: block;
-  }
-
-  .trigger-container {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-  }
-
-  .menu-link {
-    padding: 0.5em 1em;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    transition: background-color 0.2s;
-  }
-
-  .menu-link:hover {
-    background-color: var(--hover-bg, rgba(0, 0, 0, 0.05));
-  }
-
-  .menu-link.active {
-    font-weight: bold;
-  }
-
-  /* Desktop view - show links inline */
-  @media (min-width: 769px) {
-    .menu-icon {
-      display: none;
-    }
-
-    .trigger {
-      display: flex !important;
-      position: static;
-      transform: none;
-      background: none;
-      border: none;
-      padding: 0;
-      margin: 0;
-      box-shadow: none;
-      flex: 0 0 auto;
-    }
-
-    .trigger-container {
-      flex-direction: row;
-      align-items: center;
-      gap: 1em;
-    }
-
-    .menu-link {
-      padding: 0.5em;
-    }
-  }
-
   /* Mobile responsive */
   @media (max-width: 768px) {
     .menu-container {
-      gap: 1em;
+      gap: 0.5em;
+    }
+
+    .nav-links {
+      gap: 0.5em;
+    }
+
+    .menu-link {
+      padding: 0.3em;
+      font-size: 0.9em;
     }
 
     .menu-logo span {
@@ -374,33 +300,35 @@
     }
   }
 
-  /* Very small screens */
+  /* Very small screens - stack elements */
   @media (max-width: 480px) {
     .menu-container {
-      gap: 0.8em;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5em;
+    }
+
+    .menu-logo {
+      order: 1;
+    }
+
+    .dark-mode-toggle {
+      order: 2;
+    }
+
+    .nav-links {
+      order: 3;
+      flex: 0 0 100%;
+      justify-content: flex-start;
+      overflow-x: auto;
     }
 
     .menu-logo span {
       font-size: 1em !important;
     }
 
-    .dark-mode-toggle .mode-button,
-    .menu-icon {
+    .dark-mode-toggle .mode-button {
       padding: 0.3em;
     }
-  }
-
-  /* Dark mode colors */
-  :root[data-theme="dark"] .trigger,
-  body[data-theme="dark"] .trigger,
-  body.dark-mode .trigger {
-    background: var(--bg-color, #1a1a1a);
-    border-color: var(--border-color, #333);
-  }
-
-  :root[data-theme="dark"] .menu-link:hover,
-  body[data-theme="dark"] .menu-link:hover,
-  body.dark-mode .menu-link:hover {
-    background-color: rgba(255, 255, 255, 0.1);
   }
 </style>
