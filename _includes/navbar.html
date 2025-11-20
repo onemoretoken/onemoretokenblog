@@ -1,229 +1,244 @@
 <div class="navbar" role="navigation">
   <nav class="menu">
-    <!-- Dark mode toggle on the far left -->
-    <div class="dark-mode-toggle">
-      <a id="mode" class="mode-button" role="button" aria-label="Toggle dark mode">
-        <svg
-          class="mode-sunny"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 512 512"
-        >
-          <title>LIGHT</title>
-          <line
-            x1="256"
-            y1="48"
-            x2="256"
-            y2="96"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="256"
-            y1="416"
-            x2="256"
-            y2="464"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="403.08"
-            y1="108.92"
-            x2="369.14"
-            y2="142.86"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="142.86"
-            y1="369.14"
-            x2="108.92"
-            y2="403.08"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="464"
-            y1="256"
-            x2="416"
-            y2="256"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="96"
-            y1="256"
-            x2="48"
-            y2="256"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="403.08"
-            y1="403.08"
-            x2="369.14"
-            y2="369.14"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="142.86"
-            y1="142.86"
-            x2="108.92"
-            y2="108.92"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <circle
-            cx="256"
-            cy="256"
-            r="80"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-        </svg>
-        <svg
-          class="mode-moon"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 512 512"
-        >
-          <title>DARK</title>
-          <line
-            x1="256"
-            y1="48"
-            x2="256"
-            y2="96"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="256"
-            y1="416"
-            x2="256"
-            y2="464"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="403.08"
-            y1="108.92"
-            x2="369.14"
-            y2="142.86"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="142.86"
-            y1="369.14"
-            x2="108.92"
-            y2="403.08"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="464"
-            y1="256"
-            x2="416"
-            y2="256"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="96"
-            y1="256"
-            x2="48"
-            y2="256"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="403.08"
-            y1="403.08"
-            x2="369.14"
-            y2="369.14"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <line
-            x1="142.86"
-            y1="142.86"
-            x2="108.92"
-            y2="108.92"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <circle
-            cx="256"
-            cy="256"
-            r="80"
-            style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
-          />
-        </svg>
-      </a>
-    </div>
-
-    <!-- Centered logo -->
-    <div class="menu-logo">
-      <a href="{{ site.baseurl }}/" style="text-decoration: none; color: inherit;">
-        <span style="font-weight: bold; font-size: 1.2em; letter-spacing: -0.5px;">Tokenfiend</span>
-      </a>
-    </div>
-
-    <!-- Menu items on the right -->
-    <input type="checkbox" id="menu-trigger" class="menu-trigger" />
-    <label for="menu-trigger">
-      <span class="menu-icon">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 512 512"
-        >
-          <path
-            d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"
-          />
-        </svg>
-      </span>
-    </label>
-    <div class="trigger">
-      <div class="trigger-container">
-        {% assign url = page.url %}
-        {% for menu in site.data.menus %}
-          {% if url == menu.url %}
-            <a class="menu-link active" href="{{ menu.url }}">{{ menu.title }}</a>
-          {% else %}
-            {% if menu.external %}
-              <a class="menu-link" href="{{ menu.url }}" target="_blank" rel="noopener">{{ menu.title }}</a>
-            {% else %}
-              <a class="menu-link" href="{{ site.baseurl }}{{ menu.url }}">{{ menu.title }}</a>
-            {% endif %}
-          {% endif %}
-        {% endfor %}
-        <a class="menu-link rss" href="{{ site.baseurl }}/feed.xml">
+    <div class="menu-container">
+      <!-- Dark mode toggle -->
+      <div class="dark-mode-toggle">
+        <a id="mode" class="mode-button" role="button" aria-label="Toggle dark mode">
           <svg
+            class="mode-sunny"
             xmlns="http://www.w3.org/2000/svg"
-            width="17"
-            height="17"
+            width="24"
+            height="24"
             viewBox="0 0 512 512"
-            fill="#ED812E"
           >
-            <path
-              d="M108.56,342.78a60.34,60.34,0,1,0,60.56,60.44A60.63,60.63,0,0,0,108.56,342.78Z"
+            <title>LIGHT</title>
+            <line
+              x1="256"
+              y1="48"
+              x2="256"
+              y2="96"
+              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
             />
-            <path
-              d="M48,186.67v86.55c52,0,101.94,15.39,138.67,52.11s52,86.56,52,138.67h86.66C325.33,312.44,199.67,186.67,48,186.67Z"
+            <line
+              x1="256"
+              y1="416"
+              x2="256"
+              y2="464"
+              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
             />
-            <path
-              d="M48,48v86.56c185.25,0,329.22,144.08,329.22,329.44H464C464,234.66,277.67,48,48,48Z"
+            <line
+              x1="403.08"
+              y1="108.92"
+              x2="369.14"
+              y2="142.86"
+              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+            />
+            <line
+              x1="142.86"
+              y1="369.14"
+              x2="108.92"
+              y2="403.08"
+              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+            />
+            <line
+              x1="464"
+              y1="256"
+              x2="416"
+              y2="256"
+              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+            />
+            <line
+              x1="96"
+              y1="256"
+              x2="48"
+              y2="256"
+              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+            />
+            <line
+              x1="403.08"
+              y1="403.08"
+              x2="369.14"
+              y2="369.14"
+              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+            />
+            <line
+              x1="142.86"
+              y1="142.86"
+              x2="108.92"
+              y2="108.92"
+              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+            />
+            <circle
+              cx="256"
+              cy="256"
+              r="80"
+              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+            />
+          </svg>
+          <svg
+            class="mode-moon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 512 512"
+          >
+            <title>DARK</title>
+            <line
+              x1="256"
+              y1="48"
+              x2="256"
+              y2="96"
+              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+            />
+            <line
+              x1="256"
+              y1="416"
+              x2="256"
+              y2="464"
+              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+            />
+            <line
+              x1="403.08"
+              y1="108.92"
+              x2="369.14"
+              y2="142.86"
+              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+            />
+            <line
+              x1="142.86"
+              y1="369.14"
+              x2="108.92"
+              y2="403.08"
+              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+            />
+            <line
+              x1="464"
+              y1="256"
+              x2="416"
+              y2="256"
+              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+            />
+            <line
+              x1="96"
+              y1="256"
+              x2="48"
+              y2="256"
+              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+            />
+            <line
+              x1="403.08"
+              y1="403.08"
+              x2="369.14"
+              y2="369.14"
+              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+            />
+            <line
+              x1="142.86"
+              y1="142.86"
+              x2="108.92"
+              y2="108.92"
+              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+            />
+            <circle
+              cx="256"
+              cy="256"
+              r="80"
+              style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
             />
           </svg>
         </a>
+      </div>
+
+      <!-- Logo -->
+      <div class="menu-logo">
+        <a href="{{ site.baseurl }}/" style="text-decoration: none; color: inherit;">
+          <span style="font-weight: bold; font-size: 1.2em; letter-spacing: -0.5px;">Tokenfiend</span>
+        </a>
+      </div>
+
+      <!-- Menu items -->
+      <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+      <label for="menu-trigger">
+        <span class="menu-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"
+            />
+          </svg>
+        </span>
+      </label>
+      <div class="trigger">
+        <div class="trigger-container">
+          {% assign url = page.url %}
+          {% for menu in site.data.menus %}
+            {% if url == menu.url %}
+              <a class="menu-link active" href="{{ menu.url }}">{{ menu.title }}</a>
+            {% else %}
+              {% if menu.external %}
+                <a class="menu-link" href="{{ menu.url }}" target="_blank" rel="noopener">{{ menu.title }}</a>
+              {% else %}
+                <a class="menu-link" href="{{ site.baseurl }}{{ menu.url }}">{{ menu.title }}</a>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+          <a class="menu-link rss" href="{{ site.baseurl }}/feed.xml">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="17"
+              height="17"
+              viewBox="0 0 512 512"
+              fill="#ED812E"
+            >
+              <path
+                d="M108.56,342.78a60.34,60.34,0,1,0,60.56,60.44A60.63,60.63,0,0,0,108.56,342.78Z"
+              />
+              <path
+                d="M48,186.67v86.55c52,0,101.94,15.39,138.67,52.11s52,86.56,52,138.67h86.66C325.33,312.44,199.67,186.67,48,186.67Z"
+              />
+              <path
+                d="M48,48v86.56c185.25,0,329.22,144.08,329.22,329.44H464C464,234.66,277.67,48,48,48Z"
+              />
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </nav>
 </div>
 
 <style>
-  /* Navbar layout: dark mode toggle on left, title centered, menu on right */
-  .navbar .menu {
+  /* Center the navigation menu */
+  .navbar {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    padding: 0.5em 1em;
+    justify-content: center;
+    width: 100%;
+    padding: 0.5em 0;
   }
 
-  /* Dark mode toggle - far left */
+  .navbar .menu {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 1em;
+  }
+
+  /* Menu container with centered content */
+  .menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    position: relative;
+  }
+
+  /* Dark mode toggle */
   .dark-mode-toggle {
-    position: absolute;
-    left: 1em;
-    z-index: 10;
+    display: flex;
+    align-items: center;
   }
 
   .dark-mode-toggle .mode-button {
@@ -231,46 +246,140 @@
     align-items: center;
     cursor: pointer;
     padding: 0.5em;
+    background: none;
+    border: none;
   }
 
-  /* Logo - centered */
+  /* Logo - in the center */
   .menu-logo {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Menu trigger (burger menu) */
+  .menu-trigger {
+    display: none; /* Hidden checkbox */
+  }
+
+  .menu-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.5em;
+  }
+
+  .menu-icon svg {
+    fill: currentColor;
+  }
+
+  /* Trigger container for dropdown menu */
+  .trigger {
+    display: none;
     position: absolute;
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    text-align: center;
-    z-index: 5;
+    background: var(--bg-color, #fff);
+    border: 1px solid var(--border-color, #e0e0e0);
+    border-radius: 4px;
+    padding: 1em;
+    margin-top: 0.5em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
   }
 
-  /* Menu trigger and items - right side */
-  .menu-trigger,
-  .menu-icon {
-    margin-left: auto;
+  .menu-trigger:checked ~ .trigger {
+    display: block;
   }
 
-  .trigger {
-    margin-left: auto;
+  .trigger-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .menu-link {
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: background-color 0.2s;
+  }
+
+  .menu-link:hover {
+    background-color: var(--hover-bg, rgba(0, 0, 0, 0.05));
+  }
+
+  .menu-link.active {
+    font-weight: bold;
+  }
+
+  /* Desktop view - show links inline */
+  @media (min-width: 769px) {
+    .menu-icon {
+      display: none;
+    }
+
+    .trigger {
+      display: block !important;
+      position: static;
+      transform: none;
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+      box-shadow: none;
+    }
+
+    .trigger-container {
+      flex-direction: row;
+      align-items: center;
+      gap: 1em;
+    }
+
+    .menu-link {
+      padding: 0.5em;
+    }
   }
 
   /* Mobile responsive */
   @media (max-width: 768px) {
-    .navbar .menu {
-      padding: 0.5em 0.5em;
+    .menu-container {
+      gap: 1em;
     }
 
-    .dark-mode-toggle {
-      left: 0.5em;
-    }
-
-    .menu-logo {
-      font-size: 0.9em;
+    .menu-logo span {
+      font-size: 1.1em !important;
     }
   }
 
-  /* Ensure the layout doesn't break on very small screens */
+  /* Very small screens */
   @media (max-width: 480px) {
+    .menu-container {
+      gap: 0.8em;
+    }
+
     .menu-logo span {
       font-size: 1em !important;
     }
+
+    .dark-mode-toggle .mode-button,
+    .menu-icon {
+      padding: 0.3em;
+    }
+  }
+
+  /* Dark mode colors */
+  :root[data-theme="dark"] .trigger,
+  body[data-theme="dark"] .trigger,
+  body.dark-mode .trigger {
+    background: var(--bg-color, #1a1a1a);
+    border-color: var(--border-color, #333);
+  }
+
+  :root[data-theme="dark"] .menu-link:hover,
+  body[data-theme="dark"] .menu-link:hover,
+  body.dark-mode .menu-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
   }
 </style>
