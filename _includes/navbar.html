@@ -181,13 +181,18 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    padding: 0.5em 0;
+    padding: 1em 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  [data-theme="dark"] .navbar {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
   }
 
   .navbar .menu {
     width: 100%;
     max-width: 1200px;
-    padding: 0 1em;
+    padding: 0 1.5em;
   }
 
   /* Menu container - spread layout with logo left, links center, dark mode right */
@@ -195,7 +200,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 3em;
+    min-height: 2em;
     width: 100%;
   }
 
@@ -258,45 +263,27 @@
 
   /* Mobile responsive */
   @media (max-width: 768px) {
+    .navbar {
+      padding: 0.8em 0;
+    }
+
+    .navbar .menu {
+      padding: 0 1em;
+    }
+
     .menu-container {
-      gap: 0.5em;
+      gap: 0.3em;
+      min-height: 1.5em;
     }
 
     .nav-links {
-      gap: 0.5em;
+      gap: 0.4em;
+      flex: 0 1 auto;
     }
 
     .menu-link {
-      padding: 0.3em;
-      font-size: 0.9em;
-    }
-
-    .menu-logo span {
-      font-size: 1.1em !important;
-    }
-  }
-
-  /* Very small screens - stack elements */
-  @media (max-width: 480px) {
-    .menu-container {
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 0.5em;
-    }
-
-    .menu-logo {
-      order: 1;
-    }
-
-    .dark-mode-toggle {
-      order: 2;
-    }
-
-    .nav-links {
-      order: 3;
-      flex: 0 0 100%;
-      justify-content: flex-start;
-      overflow-x: auto;
+      padding: 0.4em 0.5em;
+      font-size: 0.85em;
     }
 
     .menu-logo span {
@@ -304,7 +291,63 @@
     }
 
     .dark-mode-toggle .mode-button {
+      padding: 0.4em;
+    }
+
+    .dark-mode-toggle svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  /* Very small screens - more compact */
+  @media (max-width: 480px) {
+    .navbar .menu {
+      padding: 0 0.8em;
+    }
+
+    .menu-container {
+      gap: 0.2em;
+    }
+
+    .nav-links {
+      gap: 0.3em;
+      flex: 0 1 auto;
+    }
+
+    .menu-link {
+      padding: 0.3em 0.4em;
+      font-size: 0.8em;
+    }
+
+    .menu-logo span {
+      font-size: 0.95em !important;
+      letter-spacing: -0.3px !important;
+    }
+
+    .dark-mode-toggle .mode-button {
       padding: 0.3em;
+    }
+
+    .dark-mode-toggle svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  /* Extra small screens */
+  @media (max-width: 375px) {
+    .navbar .menu {
+      padding: 0 0.6em;
+    }
+
+    .menu-link {
+      padding: 0.3em 0.3em;
+      font-size: 0.75em;
+    }
+
+    .menu-logo span {
+      font-size: 0.9em !important;
     }
   }
 </style>
