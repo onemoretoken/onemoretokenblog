@@ -5,6 +5,10 @@
   gap: 6px;
 }
 
+.header{
+  margin-top: 3em;
+}
+
 .trigger{
   width: 100%;
   display: flex;
