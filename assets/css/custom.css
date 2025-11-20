@@ -17,6 +17,10 @@
   padding:2px;
 }
 
+.menu:last-child{
+  padding-right:20px;
+}
+
 /* Leaderboard table styling */
 table {
   width: 100%;
