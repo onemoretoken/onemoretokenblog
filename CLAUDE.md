@@ -4,12 +4,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Jekyll-based blog called "Tokenfiend" using the Minima theme with custom styling. The blog uses a minimalist, condensed design with dark theme enabled.
+This is a Jekyll-based blog called "Tokenfiend" using the [jekyll-klise](https://github.com/piharpi/jekyll-klise) theme. The theme is minimalist with light and dark mode support, syntax highlighting, and SEO optimization.
 
 ## Development Commands
 
-### Local Development
+### Initial Setup
 ```bash
+# Install dependencies
+bundle install
+
 # Serve the site locally with live reload
 bundle exec jekyll serve
 
@@ -28,39 +31,36 @@ Posts require YAML front matter:
 ---
 layout: post
 title: "Your Post Title"
+date: YYYY-MM-DD HH:MM:SS +TIMEZONE
 ---
 ```
 
 ## Architecture
 
-### Theme Override Pattern
-The site uses Jekyll's Minima theme as a base but overrides specific components:
-
-- **Custom includes**: `header.html` and `footer.html` override theme defaults (placed in root, not `_includes/`)
-- **Custom layouts**: `home.html` overrides the home layout (placed in root, not `_layouts/`)
-- **Custom styles**: `style.scss` imports the Minima theme and adds custom styling on top
-
-**Important**: Custom template overrides (`header.html`, `footer.html`, `home.html`) are placed in the **repository root**, not in `_includes/` or `_layouts/` directories. This is the pattern used in this project.
-
-### Styling System
-The custom styles in `style.scss` create a condensed, minimalist design:
-- Reduced font sizes (14px base, 13px mobile)
-- Compact spacing throughout
-- Custom styling for post lists, code blocks, tables, and blockquotes
-- Uses CSS variables for theme colors (e.g., `var(--border-color-01, #424242)`)
+### Remote Theme
+This site uses `jekyll-klise` as a remote theme via the `jekyll-remote-theme` plugin. The theme files are pulled from the GitHub repository at build time, so local customization should be done through:
+- Custom files in `_includes/` to override theme includes
+- Custom files in `_layouts/` to override theme layouts
+- Custom SASS files in `_sass/` to extend theme styles
 
 ### Configuration
 `_config.yml` controls:
-- Site metadata (title, author, description)
-- Theme settings (skin: dark, date format)
-- Header pages (currently empty array to hide navigation)
-- Permalink structure: `/:year/:month/:day/:title/`
-- Plugins: jekyll-feed, jekyll-seo-tag
+- Site metadata (title, description, language, timezone)
+- Author information (name, bio, username, avatar, social links)
+- Remote theme: `piharpi/jekyll-klise`
+- Permalink structure: `/:title/`
+- Pagination: 5 posts per page
+- Plugins: jekyll-feed, jekyll-seo-tag, jekyll-sitemap, jekyll-postfiles, jekyll-paginate, jekyll-remote-theme
+
+### Important Notes
+- **GitHub Pages Limitation**: The `jekyll-postfiles` plugin is not supported by GitHub Pages. If hosting on GitHub Pages, you may experience issues with post images and assets. Consider deploying to Netlify, Vercel, Azure Static Web Apps, or Surge instead.
+- **Avatar Image**: Place your avatar at `assets/img/avatar.jpg` (referenced in `_config.yml`)
+- **Old Theme Files**: Previous Minima theme customizations are backed up in `_old_minima_theme/` directory
 
 ## File Structure
 - `_config.yml` - Jekyll configuration
 - `_posts/` - Blog post markdown files
-- `style.scss` - Custom SCSS that imports and extends Minima theme
-- `header.html`, `footer.html`, `home.html` - Theme component overrides (root level)
-- `_includes/`, `_layouts/` - Currently empty (overrides are in root)
-- `assets/css/` - Compiled CSS output location
+- `Gemfile` - Ruby dependencies
+- `assets/img/` - Images (avatar, etc.)
+- `_includes/`, `_layouts/`, `_sass/` - Theme customization directories
+- `_old_minima_theme/` - Backup of previous Minima theme overrides

@@ -1,30 +1,47 @@
 title: Tokenfiend
-description: ""
-theme: minima
+description: "A blog about tokens and technology"
+lang: en-US
+timezone: America/New_York
+
+# Remote theme
+remote_theme: piharpi/jekyll-klise
 
 # Author information
-author: Tokenfiend
-
-# Social links (uncomment and add your handles)
-# minima:
-#   social_links:
-#     - { platform: github, user_url: "https://github.com/yourusername" }
-#     - { platform: twitter, user_url: "https://twitter.com/yourusername" }
-
-# Theme configuration
-minima:
-  skin: dark
-  date_format: "%b %-d, %Y"
-  header_pages: []  # Hide all pages from header navigation
+author:
+  name: Tokenfiend
+  bio: "Writing about technology and tokens"
+  username: onemoretoken
+  avatar: /assets/img/avatar.jpg
+  email: your-email@email.com
+  github: onemoretoken
 
 # Build settings
 markdown: kramdown
-permalink: /:year/:month/:day/:title/
+highlighter: rouge
+permalink: /:title/
 
-# Display settings
-show_excerpts: true
+# Pagination
+paginate: 5
+paginate_path: "/page/:num"
 
 # Plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-postfiles
+  - jekyll-paginate
+  - jekyll-remote-theme
+
+# SASS
+sass:
+  style: compressed
+
+# Exclude
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .bundle
+  - .sass-cache
