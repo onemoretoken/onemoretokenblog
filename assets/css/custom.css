@@ -15,6 +15,7 @@
 .siteTitle{
   height: 100%;
   width: 50px;
+  text-decoration: none;
 }
 
 /* Ensure consistent padding for all menu links */
