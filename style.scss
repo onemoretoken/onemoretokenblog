@@ -1,0 +1,101 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+// Custom styling for Tokenfiend blog
+
+// Enhanced code blocks with better contrast
+.highlight {
+  border-radius: 4px;
+  padding: 1em;
+  margin: 1em 0;
+}
+
+pre, code {
+  border-radius: 3px;
+}
+
+// Better table styling
+table {
+  border-collapse: collapse;
+  margin: 1.5em 0;
+
+  th, td {
+    padding: 0.75em 1em;
+    border: 1px solid var(--border-color-01, #424242);
+  }
+
+  th {
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  tr:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+  }
+}
+
+// Improve post metadata styling
+.post-meta {
+  font-size: 0.875em;
+  opacity: 0.8;
+  margin-bottom: 1.5em;
+}
+
+// Better link hover effects
+a {
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+// Improved blockquote styling
+blockquote {
+  border-left: 3px solid var(--brand-color, #828282);
+  padding-left: 1.5em;
+  margin: 1.5em 0;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+// Post list improvements
+.post-list {
+  li {
+    margin-bottom: 2em;
+
+    .post-link {
+      font-size: 1.5em;
+      font-weight: 500;
+    }
+  }
+}
+
+// Category tags styling
+.post-categories {
+  margin-top: 0.5em;
+  font-size: 0.875em;
+
+  a {
+    display: inline-block;
+    padding: 0.25em 0.75em;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    text-decoration: none;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+  }
+}
+
+// Responsive improvements
+@media screen and (max-width: 600px) {
+  table {
+    font-size: 0.875em;
+  }
+}
