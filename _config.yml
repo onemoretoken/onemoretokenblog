@@ -1,5 +1,5 @@
 title: Tokenfiend - One token closer to AGI
-description: "A blog where I try out llms"
+description: "A blog where I try out LLMs and share my biased and subjective opinion on them"
 lang: en-US
 timezone: America/New_York
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -14,7 +14,7 @@ version: "1.0.1"
 # Author information
 author:
   name: tokenfiend
-  bio: "Benchmarking LLMs and rating them"
+  bio: "Rating LLMs through semi-rigorous means"
   username: tokenfiend
   avatar: /assets/img/avatar.jpg # this will be prefixed with baseurl automatically
   email: contact@tokenfiend.com
